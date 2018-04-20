@@ -3,4 +3,6 @@ project(hojarasca)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(hojarasca src/main.cpp src/RelativeClock.cpp src/RelativeClock.h)
+add_subdirectory(src)
+enable_testing()
+add_subdirectory(test)
