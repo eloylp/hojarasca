@@ -1,2 +1,3 @@
 
-add_executable(hojarasca main.cpp RelativeClock.h RelativeClock.cpp)
+set(SOURCES main.cpp RelativeClock.h RelativeClock.cpp)
+add_executable(hojarasca ${SOURCES})
