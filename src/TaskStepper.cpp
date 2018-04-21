@@ -2,6 +2,6 @@
 #include <iostream>
 #include "TaskStepper.h"
 
-int TaskStepper::count() {
+int TaskStepper::makeStep() {
   return ++this->counter;
 }

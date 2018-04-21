@@ -7,7 +7,7 @@ class TaskStepper {
  private:
   unsigned int counter = 0;
  public:
-  int count();
+  int makeStep();
 };
 
 #endif //HOJARASCA_TASKSTEPPER_H
