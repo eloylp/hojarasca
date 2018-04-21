@@ -3,7 +3,7 @@
 #include <RelativeClock.h>
 
 TEST(RelativeClock, test) {
-  std::unique_ptr<RelativeClock> calculator(new RelativeClock);
-  EXPECT_EQ(4, 4);
+  std::unique_ptr<RelativeClock> relativeClock(new RelativeClock);
+  EXPECT_EQ(1, relativeClock->count());
 }
 
