@@ -1,10 +1,10 @@
 
-
 add_subdirectory(googletest/googletest)
 enable_testing()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-set(SOURCES main.cpp calculator_test.cpp ../src/Calculator.cpp)
+set(SUT_DIR ../src)
+set(SOURCES main.cpp relative_clock_test.cpp ${SUT_DIR}/RelativeClock.cpp ${SUT_DIR}/RelativeClock.h)
 add_executable(testing ${SOURCES})
-target_include_directories(testing PRIVATE ../src)
+target_include_directories(testing PRIVATE ${SUT_DIR})
 target_link_libraries(testing gtest gtest_main)
 add_test(testing testing)
