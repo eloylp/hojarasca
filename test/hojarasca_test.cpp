@@ -17,6 +17,15 @@ TEST(Hojarasca, systemShutdownFlag) {
 
 }
 
+TEST(Hojarasca, systemShutdownFlagAfterEnabled) {
+
+  auto hojarasca = HojarascaFactory::get(1);
+  hojarasca->disable();
+  hojarasca->enable();
+  EXPECT_EQ(true, hojarasca->isRunning());
+
+}
+
 TEST(Hojarasca, roundLimit) {
 
   auto hojarasca = HojarascaFactory::get(1, 1);

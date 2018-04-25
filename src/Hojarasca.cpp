@@ -31,8 +31,7 @@ bool Hojarasca::isRunning() {
 void Hojarasca::run() {
 
   while (this->isRunning()) {
-    std::cout << this->taskStepper->makeStep();
-    std::cout << std::endl;
+    this->taskStepper->makeStep();
     this->roundCounter++;
     sleep(interval);
   }
