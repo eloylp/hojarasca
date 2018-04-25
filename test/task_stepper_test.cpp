@@ -4,7 +4,9 @@
 
 TEST(TaskStepper, testStepForward) {
   std::unique_ptr<TaskStepper> taskStepper(new TaskStepper);
-  EXPECT_EQ(1, taskStepper->makeStep());
-  EXPECT_EQ(2, taskStepper->makeStep());
+  Environment environment{0.23, 0.24, 0.25};
+
+  EXPECT_EQ(1, taskStepper->makeStep(&environment));
+  EXPECT_EQ(2, taskStepper->makeStep(&environment));
 }
 
