@@ -2,6 +2,7 @@
 #include <zconf.h>
 #include <iostream>
 #include "Hojarasca.h"
+#include "Environment.h"
 
 Hojarasca::Hojarasca(TaskStepper *taskStepper, unsigned int interval) : Hojarasca(taskStepper, interval, 0) {}
 Hojarasca::Hojarasca(

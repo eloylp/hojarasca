@@ -2,11 +2,7 @@
 #ifndef HOJARASCA_TASKSTEPPER_H
 #define HOJARASCA_TASKSTEPPER_H
 
-struct GroundEnvironment {
-  float humidity;
-  float temperature;
-  float lumens;
-};
+#include "Environment.h"
 
 class TaskStepper {
 
