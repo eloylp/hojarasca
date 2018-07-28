@@ -1,5 +1,4 @@
 #include <iostream>
-#include <bits/unique_ptr.h>
 #include "HojarascaFactory.h"
 
 int main(int argc, char *argv[]) {
