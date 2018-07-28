@@ -31,7 +31,7 @@ bool Hojarasca::isRunning() {
 void Hojarasca::run() {
 
   while (this->isRunning()) {
-    Environment environment{0.23, 0.24, 0.25};
+    GroundEnvironment environment{0.23, 0.24, 0.25};
     this->taskStepper->makeStep(&environment);
     this->roundCounter++;
     sleep(interval);

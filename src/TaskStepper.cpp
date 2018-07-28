@@ -2,6 +2,6 @@
 #include <iostream>
 #include "TaskStepper.h"
 
-int TaskStepper::makeStep(Environment *environment) {
+int TaskStepper::makeStep(GroundEnvironment *environment) {
   return ++this->counter;
 }
