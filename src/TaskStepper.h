@@ -9,7 +9,7 @@ class TaskStepper {
  private:
   unsigned int counter = 0;
  public:
-  int makeStep(GroundEnvironment *environment);
+  int makeStep(Environment *environment);
 };
 
 #endif //HOJARASCA_TASKSTEPPER_H

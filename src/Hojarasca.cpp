@@ -3,15 +3,19 @@
 #include <iostream>
 #include "Hojarasca.h"
 #include "Environment.h"
+#include "EnvironmentChecker.h"
 
-Hojarasca::Hojarasca(TaskStepper *taskStepper, unsigned int interval) : Hojarasca(taskStepper, interval, 0) {}
+Hojarasca::Hojarasca(EnvironmentChecker *environmentChecker, TaskStepper *taskStepper, unsigned int interval)
+    : Hojarasca(environmentChecker, taskStepper, interval, 0) {}
 Hojarasca::Hojarasca(
+    EnvironmentChecker *environmentChecker,
     TaskStepper *taskStepper,
     unsigned int interval,
     unsigned int roundLimit
 ) {
 
   this->enable();
+  this->environmentChecker = environmentChecker;
   this->taskStepper = taskStepper;
   this->interval = interval;
   this->roundLimit = roundLimit;
@@ -32,7 +36,7 @@ bool Hojarasca::isRunning() {
 void Hojarasca::run() {
 
   while (this->isRunning()) {
-    GroundEnvironment environment{0.23, 0.24, 0.25};
+    auto environment = this->environmentChecker->getGroundEnvironment();
     this->taskStepper->makeStep(&environment);
     this->roundCounter++;
     sleep(interval);

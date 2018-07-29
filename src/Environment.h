@@ -2,9 +2,9 @@
 #ifndef HOJARASCA_ENVIRONMENT_H
 #define HOJARASCA_ENVIRONMENT_H
 
-struct GroundEnvironment {
-  float humidity;
-  float temperature;
+struct Environment {
+  float groundHumidity;
+  float airTemperature;
   float lumens;
 };
 
