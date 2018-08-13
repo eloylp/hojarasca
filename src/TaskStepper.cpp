@@ -1,8 +1,13 @@
-
-#include <iostream>
+#include <Arduino.h>
 #include "TaskStepper.h"
 #include "Environment.h"
 
-int TaskStepper::makeStep(Environment *environment) {
-  return ++this->counter;
+void TaskStepper::makeStep(Environment environment) {
+   for (unsigned int i = 0; i < sizeof(tasks); ++i) {
+     tasks[i]->perform();
+   }
+}
+
+void TaskStepper::addTask(int index, Task *task) {
+  this->tasks[index] = task;
 }

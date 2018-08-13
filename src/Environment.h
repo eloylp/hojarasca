@@ -1,11 +1,10 @@
 
-#ifndef HOJARASCA_ENVIRONMENT_H
-#define HOJARASCA_ENVIRONMENT_H
+#ifndef HOJARASCA_ENVIRONMENT
+#define HOJARASCA_ENVIRONMENT
 
 struct Environment {
   float groundHumidity;
   float airTemperature;
   float lumens;
 };
-
-#endif //HOJARASCA_ENVIRONMENT_H
+#endif //HOJARASCA_ENVIRONMENT
