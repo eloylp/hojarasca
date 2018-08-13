@@ -8,10 +8,10 @@
 
 class TaskStepper {
  private:
-  Task* tasks[1] = {};
+  Task *tasks[1] = {nullptr};
  public:
   void addTask(int index, Task *task);
-  void makeStep(Environment environment);
+  bool makeStep(Environment environment);
 };
 
 #endif //HOJARASCA_TASKSTEPPER_H

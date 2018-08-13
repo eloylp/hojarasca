@@ -2,11 +2,12 @@
 #include <gtest/gtest.h>
 #include <TaskStepper.h>
 
-TEST(TaskStepper, testStepForward) {
-  std::unique_ptr<TaskStepper> taskStepper(new TaskStepper);
-  Environment environment{0.23, 0.24, 0.25};
+TEST(TaskStepper, stepping) {
 
-  EXPECT_EQ(1, taskStepper->makeStep(&environment));
-  EXPECT_EQ(2, taskStepper->makeStep(&environment));
+  std::unique_ptr<TaskStepper> taskStepper(new TaskStepper);
+  auto *waterPumpActivator = new WaterPumpActivator();
+  taskStepper->addTask(0, waterPumpActivator);
+  Environment environment{0.23, 0.24, 0.25};
+  EXPECT_TRUE(taskStepper->makeStep(environment));
 }
 

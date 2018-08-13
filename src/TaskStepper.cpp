@@ -1,11 +1,11 @@
-#include <Arduino.h>
 #include "TaskStepper.h"
 #include "Environment.h"
 
-void TaskStepper::makeStep(Environment environment) {
-   for (unsigned int i = 0; i < sizeof(tasks); ++i) {
-     tasks[i]->perform();
-   }
+bool TaskStepper::makeStep(Environment environment) {
+  for (Task *task : tasks) {
+    task->perform(environment);
+  }
+  return true;
 }
 
 void TaskStepper::addTask(int index, Task *task) {
